@@ -1,38 +1,33 @@
 # Fullstack Authentication Example with Next.js and NextAuth.js
 
-This example shows how to implement a **fullstack app in TypeScript with [Next.js](https://nextjs.org/)** using [React](https://reactjs.org/) (frontend), [Next.js API routes](https://nextjs.org/docs/api-routes/introduction) and [Prisma Client](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client) (backend). It also demonstrates how to implement authentication using [NextAuth.js](https://next-auth.js.org/). The example uses a SQLite database file with some initial dummy data which you can find at [`./prisma/dev.db`](./prisma/dev.db).
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Fprisma-nextjs-blog&env=GITHUB_ID,GITHUB_SECRET,SECRET&project-name=prisma-nextjs-blog&repo-name=prisma-nextjs-blog&integration-ids=oac_eGEyJUf8jDjOQSCNJiyYRbfX)
+
+This is a starter that shows how to implement a **fullstack app in TypeScript with [Next.js](https://nextjs.org/)** with the following stack:
+
+- [React](https://reactjs.org/) (frontend)
+- [Next.js API routes](https://nextjs.org/docs/api-routes/introduction)
+- [Prisma Client](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client) (backend).
+- [NextAuth.js](https://next-auth.js.org/) for authentication. 
+- [PostgreSQL](http://postgresql.org/) as the database of choice.
+
+> **Note**: Before you deploy the application to Vercel, ensure you sign in to Railway and create a PostgreSQL database. Create a separate GitHub OAuth application before you deploy your application. After deploying the application successfully, update the **Authorization callback URL** with the URL of the deployed app.
 
 Note that the app uses a mix of server-side rendering with `getServerSideProps` (SSR) and static site generation with `getStaticProps` (SSG). When possible, SSG is used to make database queries already at build-time (e.g. when fetching the [public feed](./pages/index.tsx)). Sometimes, the user requesting data needs to be authenticated, so SSR is being used to render data dynamically on the server-side (e.g. when viewing a user's [drafts](./pages/drafts.tsx)).
 
 ## Getting started
 
-### 1. Download example and install dependencies
-
-Download this example:
-
-```
-curl https://codeload.github.com/prisma/prisma-examples/tar.gz/latest | tar -xz --strip=2 prisma-examples-latest/typescript/rest-nextjs-api-routes-auth
-```
-
-Install npm dependencies:
-
-```
-cd rest-nextjs-api-routes-auth
-npm install
-```
-
-<details><summary><strong>Alternative:</strong> Clone the entire repo</summary>
+### 1. Download and install dependencies
 
 Clone this repository:
 
 ```
-git clone git@github.com:prisma/prisma-examples.git --depth=1
+git clone git@github.com:prisma/prisma-nextjs-blog.git
 ```
 
 Install npm dependencies:
 
 ```
-cd prisma-examples/typescript/rest-nextjs-api-routes-auth
+cd prisma-nextjs-blog
 npm install
 ```
 
@@ -40,7 +35,13 @@ npm install
 
 ### 2. Create and seed the database
 
-Run the following command to create your SQLite database file. This also creates the `User` and `Post` tables that are defined in [`prisma/schema.prisma`](./prisma/schema.prisma):
+If you're using Docker on your computer, the following script to set up PostgreSQL database using the `docker-compose.yml` file at the root of your project:
+
+```
+npm run db:up
+```
+
+Run the following command to create your PostgreSQL database. This also creates the `User`, `Post`, `Account`, `Session` and `VerificationToken` tables that are defined in [`prisma/schema.prisma`](./prisma/schema.prisma):
 
 ```
 npx prisma migrate dev --name init
@@ -51,7 +52,7 @@ When `npx prisma migrate dev` is executed against a newly created database, seed
 
 ### 3. Configuring your authentication provider
 
-In order to get this example to work, you need to configure the [GitHub](https://next-auth.js.org/providers/github) and/or [Email](https://next-auth.js.org/providers/email) authentication providers from NextAuth.js.
+In order to get this example to work, you need to configure the [GitHub](https://next-auth.js.org/providers/github) authentication provider from NextAuth.js.
 
 #### Configuring the GitHub authentication provider
 
@@ -81,9 +82,6 @@ GITHUB_SECRET=509298c32faa283f28679ad6de6f86b2472e1bff
 
 </details>
 
-#### Configuring the Email authentication provider
-
-You can [follow the instructions in the NextAuth.js documentation](https://next-auth.js.org/providers/email#configuration) to configure the Email authentication provider. Once your email authentication provider is configured, you can set the environment variables in [`.env`](./env) accordingly.
 
 ### 4. Start the app
 
