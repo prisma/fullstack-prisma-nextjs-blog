@@ -1,6 +1,12 @@
 # Fullstack Authentication Example with Next.js and NextAuth.js
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Fprisma-nextjs-blog&env=GITHUB_ID,GITHUB_SECRET,SECRET&project-name=prisma-nextjs-blog&repo-name=prisma-nextjs-blog&integration-ids=oac_eGEyJUf8jDjOQSCNJiyYRbfX)
+With Railway Integration
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ffullstack-prisma-nextjs-blog&env=SECRET,GITHUB_ID,GITHUB_SECRET&project-name=fullstack-prisma-nextjs-blog&repo-name=fullstack-prisma-nextjs-blog&integration-ids=oac_eGEyJUf8jDjOQSCNJiyYRbfX)
+
+Without the Railway integration
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ffullstack-prisma-nextjs-blog&env=DATABASE_URL,SECRET,GITHUB_ID,GITHUB_SECRET&project-name=fullstack-prisma-nextjs-blog&repo-name=fullstack-prisma-nextjs-blog)
 
 This is a starter that shows how to implement a **fullstack app in TypeScript with [Next.js](https://nextjs.org/)** with the following stack:
 
@@ -11,7 +17,7 @@ This is a starter that shows how to implement a **fullstack app in TypeScript wi
 - [PostgreSQL](http://postgresql.org/) as the database of choice.
 
 Before you deploy the application to Vercel, ensure you
-- Sign in to Railway and create a PostgreSQL database
+- (Optional) Sign in to Railway and create a PostgreSQL database
 - Create a separate GitHub OAuth application before you deploy your application
 - Update the **Authorization callback URL** with the URL of the deployed app after successfully deploying the app
 
