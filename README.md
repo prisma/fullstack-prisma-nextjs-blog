@@ -10,7 +10,10 @@ This is a starter that shows how to implement a **fullstack app in TypeScript wi
 - [NextAuth.js](https://next-auth.js.org/) for authentication. 
 - [PostgreSQL](http://postgresql.org/) as the database of choice.
 
-> **Note**: Before you deploy the application to Vercel, ensure you sign in to Railway and create a PostgreSQL database. Create a separate GitHub OAuth application before you deploy your application. After deploying the application successfully, update the **Authorization callback URL** with the URL of the deployed app.
+Before you deploy the application to Vercel, ensure you
+- Sign in to Railway and create a PostgreSQL database
+- Create a separate GitHub OAuth application before you deploy your application
+- Update the **Authorization callback URL** with the URL of the deployed app after successfully deploying the app
 
 Note that the app uses a mix of server-side rendering with `getServerSideProps` (SSR) and static site generation with `getStaticProps` (SSG). When possible, SSG is used to make database queries already at build-time (e.g. when fetching the [public feed](./pages/index.tsx)). Sometimes, the user requesting data needs to be authenticated, so SSR is being used to render data dynamically on the server-side (e.g. when viewing a user's [drafts](./pages/drafts.tsx)).
 
