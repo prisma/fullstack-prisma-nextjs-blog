@@ -1,5 +1,5 @@
 import React from "react";
-import { GetServerSideProps } from "next";
+import type { GetStaticProps } from "next";
 import ReactMarkdown from "react-markdown";
 import Layout from "../../components/Layout";
 import Router from "next/router";
@@ -7,8 +7,7 @@ import { PostProps } from "../../components/Post";
 import prisma from '../../lib/prisma'
 import { useSession } from "next-auth/react";
 
-
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = await prisma.post.findUnique({
     where: {
       id: String(params?.id) ,
@@ -21,6 +20,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   });
   return {
     props: post,
+    revalidate: 10,
   };
 };
 
