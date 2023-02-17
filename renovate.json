@@ -12,7 +12,7 @@
   "baseBranches": [ "main"],
   "packageRules": [
     {
-      "baseBranchList": ["latest"],
+      "baseBranchList": ["main"],
       "packageNames": ["prisma", "@prisma/client"],
       "enabled": true,
       "updateTypes": ["major"]
