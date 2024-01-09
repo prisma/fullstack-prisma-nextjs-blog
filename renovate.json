@@ -5,7 +5,7 @@
     "automerge": false
   },
   "masterIssue": true,
-  "additionalReviewers": ["ruheni"],
+  "additionalReviewers": ["jharrell"],
   "semanticCommits": "enabled",
   "dependencyDashboard": true,
   "timezone": "Europe/Berlin",
