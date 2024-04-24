@@ -9,8 +9,8 @@
     "dev": "next",
     "build": "npx prisma migrate deploy && next build",
     "start": "next start",
-    "db:up": "docker-compose up -d",
-    "db:down": "docker-compose down"
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "1.0.3",
