@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "1.0.3",
-    "@prisma/adapter-pg": "6.20.0-integration-next.9",
-    "@prisma/client": "6.20.0-integration-next.9",
+    "@prisma/adapter-pg": "7.0.0",
+    "@prisma/client": "7.0.0",
     "next": "13.5.6",
     "next-auth": "4.3.1",
     "react": "18.2.0",
@@ -28,7 +28,7 @@
     "@types/node": "16.18.66",
     "@types/react": "17.0.44",
     "dotenv": "^17.2.3",
-    "prisma": "6.20.0-integration-next.9",
+    "prisma": "7.0.0",
     "string-replace-loader": "^3.2.0",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
