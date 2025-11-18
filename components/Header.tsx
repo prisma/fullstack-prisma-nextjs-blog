@@ -12,8 +12,10 @@ const Header: React.FC = () => {
 
   let left = (
     <div className="left">
-      <Link href="/" className="bold" data-active={isActive("/")}>
-        Feed
+      <Link href="/">
+        <a className="bold" data-active={isActive("/")}>
+          Feed
+        </a>
       </Link>
       <style jsx>{`
         .bold {
@@ -42,8 +44,10 @@ const Header: React.FC = () => {
   if (status === 'loading') {
     left = (
       <div className="left">
-        <Link href="/" className="bold" data-active={isActive("/")}>
-          Feed
+        <Link href="/">
+          <a className="bold" data-active={isActive("/")}>
+            Feed
+          </a>
         </Link>
         <style jsx>{`
           .bold {
@@ -81,8 +85,8 @@ const Header: React.FC = () => {
   if (!session) {
     right = (
       <div className="right">
-        <Link href="/api/auth/signin" data-active={isActive("/signup")}>
-          Log in
+        <Link href="/api/auth/signin">
+          <a data-active={isActive("/signup")}>Log in</a>
         </Link>
         <style jsx>{`
           a {
@@ -112,11 +116,13 @@ const Header: React.FC = () => {
   if (session) {
     left = (
       <div className="left">
-        <Link href="/" className="bold" data-active={isActive("/")}>
-          Feed
+        <Link href="/">
+          <a className="bold" data-active={isActive("/")}>
+            Feed
+          </a>
         </Link>
-        <Link href="/drafts" data-active={isActive("/drafts")}>
-          My drafts
+        <Link href="/drafts">
+          <a data-active={isActive("/drafts")}>My drafts</a>
         </Link>
         <style jsx>{`
           .bold {
@@ -145,10 +151,12 @@ const Header: React.FC = () => {
           {session.user.name} ({session.user.email})
         </p>
         <Link href="/create">
-          <button>New post</button>
+          <button>
+            <a>New post</a>
+          </button>
         </Link>
         <button onClick={() => signOut()}>
-          Log out
+          <a>Log out</a>
         </button>
         <style jsx>{`
           a {
