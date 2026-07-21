@@ -26,7 +26,7 @@
   "devDependencies": {
     "@types/next-auth": "3.15.0",
     "@types/node": "16.18.126",
-    "@types/react": "17.0.93",
+    "@types/react": "19.2.17",
     "dotenv": "^17.2.3",
     "prisma": "7.9.0",
     "string-replace-loader": "^3.2.0",
