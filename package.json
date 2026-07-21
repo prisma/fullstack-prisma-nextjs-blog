@@ -18,7 +18,7 @@
     "@prisma/adapter-pg": "7.8.0",
     "@prisma/client": "7.8.0",
     "next": "13.5.11",
-    "next-auth": "4.24.14",
+    "next-auth": "4.24.15",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-markdown": "8.0.7"
