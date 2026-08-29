@@ -28,7 +28,7 @@
     "@types/node": "16.18.126",
     "@types/react": "17.0.93",
     "dotenv": "^17.2.3",
-    "prisma": "7.9.1",
+    "prisma": "7.10.0",
     "string-replace-loader": "^3.2.0",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
